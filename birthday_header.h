@@ -14,6 +14,7 @@ public:
 	int getDay();
 	int getYear();
 
+
 	void convertBirthday();
 
 
@@ -41,28 +42,6 @@ public:
 	invalidDay(string str)
 	{
 		message = str + "Needs to be a valid day of month (1-31).\n";
-	}
-
-	string what()
-	{
-		return message;
-	}
-
-private:
-	string message;
-};
-
-
-class invalidMonth {
-public:
-	invalidMonth()
-	{
-		message = "Please enter a Month between 1 - 12.\n";
-	}
-
-	invalidMonth(string str)
-	{
-		message = str + "Needs to be a valid month (1-12).\n";
 	}
 
 	string what()

@@ -14,7 +14,6 @@ public:
 	int getDay();
 	int getYear();
 
-
 	void convertBirthday();
 
 
@@ -52,3 +51,4 @@ public:
 private:
 	string message;
 };
+

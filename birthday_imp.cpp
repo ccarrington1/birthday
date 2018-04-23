@@ -15,12 +15,15 @@ birthday::birthday(string m, int d, int y)
 //set
 void birthday::setMonth(string m)
 {
-	month = m;
+		month = m;
 };
 
 void birthday::setDay(int d)
 {
-	day = d;
+	if (d >= 1 && d <= 31)
+		day = d;
+	else if (d <= 0 && d >= 31)
+		throw invalidDay("message");
 };
 
 void birthday::setYear(int y)

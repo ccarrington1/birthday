@@ -7,10 +7,10 @@ using namespace std;
 
 class birthday {
 public:
-	void setMonth(string m);
-	void setDay(int d);
+	void setMonth(int m);
+	void setDay(int d, int m, int y);
 	void setYear(int y);
-	string getMonth();
+	int getMonth();
 	int getDay();
 	int getYear();
 
@@ -18,10 +18,10 @@ public:
 
 
 	//constructor
-	birthday(string m, int d = 0, int y = 0);
+	birthday(int m = 0, int d = 0, int y = 0);
 
 private:
-	string month;
+	int month;
 	int day;
 	int year;
 };
@@ -40,7 +40,7 @@ public:
 
 	invalidDay(string str)
 	{
-		message = str + "Needs to be a valid day of month (1-31).\n";
+		message = str + "Needs to be a valid day (1-30/31 or Feb/account for Leap Years).\n";
 	}
 
 	string what()
@@ -52,3 +52,44 @@ private:
 	string message;
 };
 
+class invalidMonth {
+public:
+	invalidMonth()
+	{
+		message = "Please enter a month between 1 - 12.\n";
+	}
+
+	invalidMonth(string str)
+	{
+		message = str + "Needs to be a valid month (1-12).\n";
+	}
+
+	string what()
+	{
+		return message;
+	}
+
+private:
+	string message;
+};
+
+class invalidYear {
+public:
+	invalidYear()
+	{
+		message = "Please enter a valid year (1900-2099).\n";
+	}
+
+	invalidYear(string str)
+	{
+		message = str + "Needs to be a valid year (1900-2099).\n";
+	}
+
+	string what()
+	{
+		return message;
+	}
+
+private:
+	string message;
+};
